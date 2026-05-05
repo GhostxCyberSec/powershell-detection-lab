@@ -31,6 +31,9 @@ The Wazuh agent was configured to collect the Sysmon Operational event channel.
 ## Custom Detection Rule
 The custom Wazuh rule detects PowerShell or PowerShell Core being launched with the encoded command flag.
 
+[Detection Rule](rules/local_rules.xml)
+
+[Detection Rule](screenshots/detection-rule)
 ```xml
 <group name="windows,powershell,sysmon,custom">
   <rule id="100010" level="10">
