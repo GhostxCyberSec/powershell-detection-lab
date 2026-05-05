@@ -33,21 +33,7 @@ The custom Wazuh rule detects PowerShell or PowerShell Core being launched with 
 
 [Detection Rule](rules/local_rules.xml)
 
-[Detection Rule](screenshots/detection-rule)
-```xml
-<group name="windows,powershell,sysmon,custom">
-  <rule id="100010" level="10">
-    <if_group>sysmon_event1</if_group>
-    <field name="win.system.eventID">1</field>
-    <field name="win.eventdata.Image" type="pcre2">(?i)(powershell|pwsh)\.exe$</field>
-    <field name="win.eventdata.CommandLine" type="pcre2">(?i)(^|\s)-(enc|encodedcommand)(\s|$)</field>
-    <description>Suspicious PowerShell encoded command detected</description>
-    <mitre>
-      <id>T1059.001</id>
-    </mitre>
-  </rule>
-</group>
-```
+![Detection Rule](screenshots/detection-rule)
 
 ## Test Commands
 
