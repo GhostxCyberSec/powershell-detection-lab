@@ -33,7 +33,7 @@ The custom Wazuh rule detects PowerShell or PowerShell Core being launched with 
 
 [Detection Rule](rules/local_rules.xml)
 
-![Detection Rule](screenshots/detection-rule)
+![Detection Rule](screenshots/detection-rule.png)
 
 ## Test Commands
 
