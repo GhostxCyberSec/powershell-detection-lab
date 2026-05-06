@@ -58,6 +58,10 @@ powershell.exe -NoProfile -Command "Get-Process | Select-Object -First 3"
 ```
 ![Test Command](screenshots/ps-cmd-test.png)
 
+Wazuh alert from normal command, does not trigger the custom encoded rule as intended.
+
+![Wazuh Normal Alert](screenshots/wazuh-cmd-test.png)
+
 ### Encoded PowerShell Test
 This command uses the `-enc` flag and should trigger custom rule `100010`.
 
@@ -69,12 +73,21 @@ powershell.exe -enc $Encoded
 ```
 ![Encoded Test Command](screenshots/ps-enccmd-test.png)
 
+Wazuh triggering the custom rule marking this command as a suspicious encoded command.
+
+![Wazuh Econded Alert](screenshots/wazuh-enccmd-test.png)
+
 ### Recon-Style PowerShell Test
 This command creates additional PowerShell telemetry for analysis.
 
 ```powershell
 powershell.exe -NoProfile -Command "whoami; hostname; Get-LocalUser"
 ```
+![Recon Test Command](screenshots/ps-recon-cmd-test.png)
+
+Wazuh does not trigger the custom rule as it is not an encoded command, for future takeaways another custom rule can be added to specifically detect recon commands.
+
+![Wazuh Recon Alert](screenshots/wazuh-recon-test.png)
 
 ## Wazuh Queries
 
@@ -101,22 +114,6 @@ win.eventdata.CommandLine:*-enc*
 ### Custom Detection Alert
 ```kql
 rule.id:100010
-```
-
-## Screenshots
-
-### PowerShell Process Event in Wazuh
-Add screenshot:
-
-```text
-screenshots/powershell-process-event.png
-```
-
-### Custom Wazuh Alert
-Add screenshot:
-
-```text
-screenshots/wazuh-alert-100010.png
 ```
 
 ## Results
