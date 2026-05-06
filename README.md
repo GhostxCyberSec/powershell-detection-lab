@@ -20,7 +20,7 @@ Sysmon Event ID 1 records process creation activity, including the executable pa
 
 ## Wazuh Agent Configuration
 The Wazuh agent was configured to collect the Sysmon Operational event channel.
-
+[Agent Rule](rules/ossec.conf-snippet.xml)
 ```xml
 <localfile>
   <location>Microsoft-Windows-Sysmon/Operational</location>
@@ -30,9 +30,7 @@ The Wazuh agent was configured to collect the Sysmon Operational event channel.
 
 ## Custom Detection Rule
 The custom Wazuh rule detects PowerShell or PowerShell Core being launched with the encoded command flag.
-
 [Detection Rule](rules/local_rules.xml)
-
 ```xml
 <group name="windows,powershell,sysmon,custom">
   <rule id="100010" level="10">
