@@ -56,7 +56,7 @@ This command should create Sysmon telemetry but should not trigger custom rule `
 ```powershell
 powershell.exe -NoProfile -Command "Get-Process | Select-Object -First 3"
 ```
-
+![Test Command](screenshots/ps-cmd-test.png)
 ### Encoded PowerShell Test
 This command uses the `-enc` flag and should trigger custom rule `100010`.
 
