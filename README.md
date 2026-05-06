@@ -57,6 +57,7 @@ This command should create Sysmon telemetry but should not trigger custom rule `
 powershell.exe -NoProfile -Command "Get-Process | Select-Object -First 3"
 ```
 ![Test Command](screenshots/ps-cmd-test.png)
+
 ### Encoded PowerShell Test
 This command uses the `-enc` flag and should trigger custom rule `100010`.
 
@@ -66,6 +67,7 @@ $Bytes = [System.Text.Encoding]::Unicode.GetBytes($Text)
 $Encoded = [Convert]::ToBase64String($Bytes)
 powershell.exe -enc $Encoded
 ```
+![Encoded Test Command](screenshots/ps-enccmd-test.png)
 
 ### Recon-Style PowerShell Test
 This command creates additional PowerShell telemetry for analysis.
@@ -102,13 +104,6 @@ rule.id:100010
 ```
 
 ## Screenshots
-
-### Sysmon Installed
-Add screenshot:
-
-```text
-screenshots/sysmon-installed.png
-```
 
 ### PowerShell Process Event in Wazuh
 Add screenshot:
