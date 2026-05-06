@@ -1,17 +1,17 @@
-**Confirm Sysmon logs are arriving**
+Confirm Sysmon logs are arriving
 win.system.channel:"Microsoft-Windows-Sysmon/Operational"
 
-# Sysmon Event ID 1 process creation
+Sysmon Event ID 1 process creation
 win.system.eventID:1
 
-# PowerShell process events
+PowerShell process events
 win.eventdata.Image:*powershell*
 
-# Encoded PowerShell command-line activity
+Encoded PowerShell command-line activity
 win.eventdata.CommandLine:*-enc*
 
-# Custom Wazuh alert
+Custom Wazuh alert
 rule.id:100010
 
-# MITRE PowerShell technique
+MITRE PowerShell technique
 rule.mitre.id:T1059.001
